@@ -1,4 +1,3 @@
-
 <link rel="import" href="../polymer/polymer.html">
 
 <!--
@@ -8,134 +7,140 @@ Example:
 
     <<%= elementName %>></<%= elementName %>>
 
+@group PhotoShelter.com Elements
+@element <%= elementName %>
 @demo
 -->
 <dom-module id="<%= elementName %>">
-
-  <style>
+<template>
+    <style>
     :host {
-      display: block;
-      box-sizing: border-box;
+        display: block;
+        box-sizing: border-box;
     }
-
-    .author img {
-      float: left;
-      margin-right: 5px;
-      max-height: 100px;
-      max-width: 100px;
-    }
-  </style>
-
-  <template>
-    <h1>&lt;<%= elementName %>&gt;</h1>
-    <content></content>
-    <p class="author">
-      <img src="{{author.image}}">
-      Cheers,<br/>
-      <span class="name">{{author.name}}</span>
-    </p>
-  </template>
-
+    </style>
+</template>
 </dom-module>
 
 <script>
 
-  Polymer({
+Polymer({
 
     is: '<%= elementName %>',
 
+    /**
+    * List the events that you component emits and associated documentation to
+    * undestand the most beneficial way to leverage those events here.
+    *
+    * @event <%= elementName %>-event
+    */
+
     properties: {
 
-      /**
-       * `fancy` indicates that the element should don a monocle and tophat,
-       * while checking its pocket watch.
-       */
-      fancy: Boolean,
+        /**
+        * `public` indicate the public and private API available when
+        * implementing this component.
+        */
+        public: {
+			type: String,
+			computed: '_computePublic(private)',
+			observer: '_publicChanged'
+		},
 
-      /**
-       * Describes the author of the element, but is really just an excuse to
-       * show off JSDoc annotations.
-       *
-       * @type {{name: string, image: string}}
-       */
-      author: {
-        type: Object,
-        // Use `value` to provides a default value for a property, by setting it
-        // on your element's prototype.
-        //
-        // If you provide a function, as we do here, Polymer will call that
-        // _per element instance_.
-        //
-        // We do that to ensure that each element gets its own copy of the
-        // value, rather than having it shared across all instances (via the
-        // prototype).
-        value: function() {
-          return {
-            name:  'Dimitri Glazkov',
-            image: 'http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg',
-          };
-        }
-      },
+        /**
+        * Private APIs should be so notated by a
+        * preceeding `_` in the porperty name.
+        */
+        _private: String
 
     },
 
-    // Element Lifecycle
+	/*
+	* Include your observers here.
+	* e.g. 'method(msg)'
+	*/
+	observers: [],
+
+	/*
+	* Include your listeners here.
+	* e.g. 'id.tap': '_method'
+	*/
+	listeners: {},
+
+	/*
+	* Include your lifecycle functions here.
+	*/
+	created: function() {
+		// 'created' is called before barely anything in the component is
+		// available, but can be useful for any preflight code you might want to
+		// run you component with.
+	},
 
     ready: function() {
-      // `ready` is called after all elements have been configured, but
-      // propagates bottom-up. This element's children are ready, but parents
-      // are not.
-      //
-      // This is the point where you should make modifications to the DOM (when
-      // necessary), or kick off any processes the element wants to perform.
+        // `ready` is called after all elements have been configured, but
+        // propagates bottom-up. This element's children are ready, but parents
+        // are not.
+        //
+        // This is the point where you should make modifications to the DOM (when
+        // necessary), or kick off any processes the element wants to perform.
     },
 
     attached: function() {
-      // `attached` fires once the element and its parents have been inserted
-      // into a document.
-      //
-      // This is a good place to perform any work related to your element's
-      // visual state or active behavior (measuring sizes, beginning animations,
-      // loading resources, etc).
+        // `attached` fires once the element and its parents have been inserted
+        // into a document.
+        //
+        // This is a good place to perform any work related to your element's
+        // visual state or active behavior (measuring sizes, beginning animations,
+        // loading resources, etc).
     },
 
     detached: function() {
-      // The analog to `attached`, `detached` fires when the element has been
-      // removed from a document.
-      //
-      // Use this to clean up anything you did in `attached`.
+        // The analog to `attached`, `detached` fires when the element has been
+        // removed from a document.
+        //
+        // Use this to clean up anything you did in `attached`.
     },
 
-    // Element Behavior
+	/*
+	* Include your changed callbacks here.
+	*/
+	_publicChanged: function(newVal, oldVal) {
+
+	},
+
+	/*
+	* Include your computed properties here.
+	*/
+	_computePublic: function(private) {
+		return private + ' is not public';
+	},
 
     /**
-     * The `<%= elementName %>-lasers` event is fired whenever `fireLasers` is called.
-     *
-     * @event <%= elementName %>-lasers
-     * @detail {{sound: String}}
-     */
-
-    /**
-     * Sometimes it's just nice to say hi.
-     *
-     * @param {string} greeting A positive greeting.
-     * @return {string} The full greeting.
-     */
-    sayHello: function(greeting) {
-      var response = greeting || 'Hello World!';
-      return '<%= elementName %> says, ' + response;
+    * There is much that you can describe to the implementor abour your
+    * components public and private methods.
+    *
+    * @param {string} outline the arguments that will be recieved.
+    * @return {boolean} outline the way your method will respond to being called.
+    */
+    method: function(msg) {
+        msg = msg || 'When you fire events you can attach all ' +
+            'sorts of data to them.';
+        var eventData = {
+            msg: msg
+        }
+        this.fire('<%= elementName %>-event', eventData);
+        return false;
     },
-
     /**
-     * Attempts to destroy this element's enemies with an any beam of light!
-     *
-     * Or, at least, dispatches an event in the vain hope that someone else will
-     * do the zapping.
-     */
-    fireLasers: function() {
-      this.fire('<%= elementName %>-lasers', {sound: 'Pew pew!'});
+    * Private methods should be so notated by a preceeding `_` in the
+    * method name.
+    *
+    * @return {boolean} outline the way your method will respond to being called.
+    */
+    _method: function() {
+        return false;
     }
 
-  });
+});
 
 </script>
