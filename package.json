@@ -1,22 +1,22 @@
 {
-    "name": "slush-polymer-seed-element",
-    "description": "A slush generator for a Polymer element project based on PolymerElements/seed-element.",
-    "version": "1.0.2",
-    "homepage": "https://github.com/mwootendev/slush-polymer-seed-element",
+    "name": "slush-ps-seed",
+    "description": "A slush generator for a PhotoShelter.com Polymer web component based on PolymerElements/seed-element.",
+    "version": "1.0.0",
+    "homepage": "https://github.com/photoshelter/slush-ps-seed",
     "author": {
-        "name": "Michael Wooten",
-        "email": "mwootendev@gmail.com"
+        "name": "Westbrook Johnson",
+        "email": "westbrook@photoshelter.com"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/mwootendev/slush-polymer-seed-element.git"
+        "url": "git://github.com/photoshelter/slush-ps-seed.git"
     },
     "bugs": {
-        "url": "https://github.com/mwootendev/slush-polymer-seed-element/issues"
+        "url": "https://github.com/photoshelter/slush-ps-seed/issues"
     },
     "licenses": [{
         "type": "MIT",
-        "url": "https://github.com/mwootendev/slush-polymer-seed-element/blob/master/LICENSE"
+        "url": "https://github.com/photoshelter/slush-ps-seed/blob/master/LICENSE"
     }],
     "main": "slushfile.js",
     "engines": {
@@ -46,6 +46,7 @@
         "element",
         "webcomponent",
         "webcomponents",
-        "seed"
+        "seed",
+        "photoshelter"
     ]
 }
