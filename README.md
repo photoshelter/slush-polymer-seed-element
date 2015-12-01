@@ -1,14 +1,14 @@
-# Slush Polymer-seed-element [![Build Status](https://secure.travis-ci.org/mwootendev/slush-polymer-seed-element.png?branch=master)](https://travis-ci.org/mwootendev/slush-polymer-seed-element) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-polymer-seed-element.png)](http://badges.enytc.com/for/npm/slush-polymer-seed-element)
+# Slush Polymer-seed-element
 
 > A slush generator for a Polymer element project based on PolymerElements/seed-element.
 
 
 ## Getting Started
 
-Install `slush-polymer-seed-element` globally:
+Install `slush-ps-seed` globally:
 
 ```bash
-$ npm install -g slush-polymer-seed-element
+$ npm install -g slush-ps-seed
 ```
 
 ### Usage
@@ -16,13 +16,13 @@ $ npm install -g slush-polymer-seed-element
 Create a new folder for your project:
 
 ```bash
-$ mkdir my-slush-polymer-seed-element
+$ mkdir my-slush-ps-seed
 ```
 
 Run the generator from within the new folder:
 
 ```bash
-$ cd my-slush-polymer-seed-element && slush polymer-seed-element
+$ cd my-slush-ps-seed && slush ps-seed
 ```
 
 ## Getting To Know Slush
