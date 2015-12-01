@@ -24,7 +24,7 @@ function format(string) {
 
 var defaults = (function () {
     var workingDirName = path.basename(process.cwd()),
-      homeDir, osUserName, configFile, user;
+      homeDir, osUserName, configFile, user, description;
 
     if (process.platform === 'win32') {
         homeDir = process.env.USERPROFILE;
@@ -41,11 +41,18 @@ var defaults = (function () {
     if (require('fs').existsSync(configFile)) {
         user = require('iniparser').parseSync(configFile).user;
     }
+    
+    description = 'This is a brand new PhotoShelter.com web component.  Build'
+        + 'from these files to include one base, featureless component, three failing WCT tests'
+        + 'to remind you to write them for real before you try to pass code along for review,'
+        + 'and Hydrolysis ready comment helpers that prepare your code for `<iron-component-page/>`'
+        + 'based documentation while generally outlining our web component style guide.  Enjoy!'
 
     return {
         userName: osUserName || format(user.name || ''),
         authorName: user.name || '',
-        authorEmail: user.email || ''
+        authorEmail: user.email || '',
+        elementDescription: description || ''
     };
 })();
 
@@ -56,7 +63,8 @@ gulp.task('default', function (done) {
         default: 'seed-element'
     }, {
         name: 'elementDescription',
-        message: 'What is the description of your element?'
+        message: 'What is the description of your element?',
+        default: defaults.elementDescription
     }, {
         name: 'authorName',
         message: 'Who is the author of this element?',
