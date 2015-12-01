@@ -20,17 +20,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <p>An example of <code>&lt;<%= elementName %>&gt;</code>:</p>
 
-    <button>Say Something</button>
-
-    <<%= elementName %> author='{"name": "Lord Meowser", "image": "http://placekitten.com/g/200/300"}' fancy>
-      <h2>Hello <%= elementName %></h2>
-    </<%= elementName %>>
-
-    <script>
-      document.querySelector('button').addEventListener('click', function() {
-        alert(document.querySelector('<%= elementName %>').sayHello('Hallo!'));
-      });
-    </script>
+    <<%= elementName %>></<%= elementName %>>
 
   </body>
 </html>
