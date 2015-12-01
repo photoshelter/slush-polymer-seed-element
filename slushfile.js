@@ -42,10 +42,10 @@ var defaults = (function () {
         user = require('iniparser').parseSync(configFile).user;
     }
     
-    description = 'This is a brand new PhotoShelter.com web component.  Build'
-        + 'from these files to include one base, featureless component, three failing WCT tests'
-        + 'to remind you to write them for real before you try to pass code along for review,'
-        + 'and Hydrolysis ready comment helpers that prepare your code for `<iron-component-page/>`'
+    description = 'This is a brand new PhotoShelter.com web component.  Build\n'
+        + 'from these files to include one base, featureless component, three failing WCT tests\n'
+        + 'to remind you to write them for real before you try to pass code along for review,\n'
+        + 'and Hydrolysis ready comment helpers that prepare your code for `<iron-component-page/>`\n'
         + 'based documentation while generally outlining our web component style guide.  Enjoy!'
 
     return {
