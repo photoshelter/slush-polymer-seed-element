@@ -13,16 +13,16 @@ $ npm install -g slush-ps-seed
 
 ### Usage
 
-Create a new folder for your project:
+Go to your web components directory:
 
 ```bash
-$ mkdir my-slush-ps-seed
+$ cd components
 ```
 
-Run the generator from within the new folder:
+Run the generator and a new component will be built into a folder of its own name:
 
 ```bash
-$ cd my-slush-ps-seed && slush ps-seed
+$ slush ps-seed
 ```
 
 ## Getting To Know Slush
