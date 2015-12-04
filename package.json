@@ -1,7 +1,7 @@
 {
   "name": "slush-ps-seed",
   "description": "A slush generator for a PhotoShelter.com Polymer web component based on PolymerElements/seed-element.",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage": "https://github.com/photoshelter/slush-ps-seed",
   "author": {
     "name": "Westbrook Johnson",
