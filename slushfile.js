@@ -99,7 +99,6 @@ gulp.task('default', function (done) {
                         file.basename = answers.elementName;
                     }
                 }))
-                .pipe(conflict('./'))
                 .pipe(gulp.dest('./' + answers.elementName))
                 .pipe(install())
                 .on('end', function () {
