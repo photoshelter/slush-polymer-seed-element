@@ -9,8 +9,6 @@
 'use strict';
 
 var gulp = require('gulp'),
-    install = require('gulp-install'),
-    conflict = require('gulp-conflict'),
     template = require('gulp-template'),
     rename = require('gulp-rename'),
     _ = require('underscore.string'),
@@ -100,7 +98,6 @@ gulp.task('default', function (done) {
                     }
                 }))
                 .pipe(gulp.dest('./' + answers.elementName))
-                .pipe(install())
                 .on('end', function () {
                     done();
                 });
