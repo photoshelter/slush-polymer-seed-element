@@ -42,39 +42,39 @@ Polymer({
         * implementing this component.
         */
         public: {
-			type: String,
-			computed: '_computePublic(private)',
-			observer: '_publicChanged'
-		},
+		type: String,
+		computed: '_computePublic(_privateVal)',
+		observer: '_publicChanged'
+	},
 
         /**
         * Private APIs should be so notated by a
         * preceeding `_` in the porperty name.
         */
-        _private: String
+        _privateVal: String
 
     },
 
-	/*
-	* Include your observers here.
-	* e.g. 'method(msg)'
-	*/
-	observers: [],
+    /*
+    * Include your observers here.
+    * e.g. 'method(msg)'
+    */
+    observers: [],
 
-	/*
-	* Include your listeners here.
-	* e.g. 'id.tap': '_method'
-	*/
-	listeners: {},
+    /*
+    * Include your listeners here.
+    * e.g. 'id.tap': '_method'
+    */
+    listeners: {},
 
-	/*
-	* Include your lifecycle functions here.
-	*/
-	created: function() {
-		// 'created' is called before barely anything in the component is
-		// available, but can be useful for any preflight code you might want to
-		// run you component with.
-	},
+    /*
+    * Include your lifecycle functions here.
+    */
+    created: function() {
+	// 'created' is called before barely anything in the component is
+	// available, but can be useful for any preflight code you might want to
+	// run you component with.
+    },
 
     ready: function() {
         // `ready` is called after all elements have been configured, but
@@ -101,19 +101,19 @@ Polymer({
         // Use this to clean up anything you did in `attached`.
     },
 
-	/*
-	* Include your changed callbacks here.
-	*/
-	_publicChanged: function(newVal, oldVal) {
+    /*
+    * Include your changed callbacks here.
+    */
+    _publicChanged: function(newVal, oldVal) {
+	//compare or react to the newVal
+    },
 
-	},
-
-	/*
-	* Include your computed properties here.
-	*/
-	_computePublic: function(private) {
-		return private + ' is not public';
-	},
+    /*
+    * Include your computed properties here.
+    */
+    _computePublic: function(privateVal) {
+    	return privateVal + ' is not public';
+    },
 
     /**
     * There is much that you can describe to the implementor abour your
