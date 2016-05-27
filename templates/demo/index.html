@@ -6,12 +6,18 @@
 	<title><%= elementName %> Demo</title>
 	<script src="../../webcomponentsjs/webcomponents-lite.js"></script>
 	<link rel="import" href="../<%= elementName %>.html">
+	<link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    	<link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
 </head>
 <body unresolved>
 	
 	<p>An example of <code>&lt;<%= elementName %>&gt;</code>:</p>
 	
-	<<%= elementName %>></<%= elementName %>>
+	<demo-snippet class="centered-demo">
+		<template>
+			<<%= elementName %>></<%= elementName %>>
+		</template>
+	</demo-snippet>
 	
 </body>
 </html>
