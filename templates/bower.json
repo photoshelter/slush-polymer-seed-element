@@ -10,7 +10,7 @@
     "web-components",
     "polymer",
     "<%= elementName %>",
-    "seed"
+    "photoshelter"
   ],
   "main": "<%= elementName %>.html",
   "license": "http://polymer.github.io/LICENSE.txt",
